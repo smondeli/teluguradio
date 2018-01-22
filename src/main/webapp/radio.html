@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Telugu Radio</title>
+<script>
+function aud_play_pause(radioName) { 
+	var currRadio = document.getElementById(radioName);
+	var currRaddioButton = document.getElementById(radioName+"Button");
+	var currRadios = document.getElementsByTagName('audio');
+	var allRaddioButtons = document.getElementsByTagName('input');
+	 
+	if (currRadio.paused) { 
+		for(i=0; i<currRadios.length; i++){
+			currRadios[i].pause();
+			allRaddioButtons[i].value = "Play";
+			allRaddioButtons[i].src = "play.png";
+		}	
+		currRadio.play();
+		currRaddioButton.value = "Pause";
+		currRaddioButton.src = "pause.png";
+	} else { 
+		currRadio.pause();
+		currRaddioButton.value = "Play";
+		currRaddioButton.src = "play.png";
+	} 
+}
+</script>
+<style>
+h1 {
+	color: red;
+	text-align: center;
+}
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    background-image: url('http://www.radio2fun.com/site/pages/wallpaper/wallpaper894.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+<h1> Telugu Radio </h1>
+</head>
+<body>
+<audio id="radioOne" src="http://173.203.133.187:9700/;stream/1" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
+<audio id="andhraMirchi" src="http://184.154.202.243:8310/stream" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
+
+<table align="center" >
+  <tr>    
+    <td style="text-align: right"><input id="radioOneButton" type="image" src="play.png" alt="Play" width="48" height="48" onclick="aud_play_pause('radioOne')"></td> 
+	<td style="text-align: left; color: white;">Telugu One</td>
+  </tr>
+  <tr>    
+	<td style="text-align: right"><input id="andhraMirchiButton" type="image" src="play.png" alt="Play" width="48" height="48" onclick="aud_play_pause('andhraMirchi')"></td>
+	<td style="text-align: left; color: white;">Andhra Mirchi</td>
+  </tr>
+</table>
+
+</body>
+</html>
