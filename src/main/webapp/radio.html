@@ -26,27 +26,62 @@ function aud_play_pause(radioName) {
 }
 </script>
 <style>
+html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 h1 {
 	color: red;
 	text-align: center;
 }
-body {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #eee;
+.content {
+	width: 100%;
+    height: 100%;
+	line-height: 300%;
+	text-align: center;
+    max-height: 100%;
     background-image: url('radiobg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size:100% 100%;
+    background-repeat: no-repeat; 
+}
+table {
+	margin: 0 auto;
+}
+.header {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: left;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
 }
 </style>
 
-<h1> Telugu Radio </h1>
 </head>
 <body>
+</div>
+<div class="header">
+  <h1>Telugu Radio</h1>
+</div>
+
+<div class="content">
 <audio id="radioOne" src="http://173.203.133.187:9700/;stream/1" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
 <audio id="andhraMirchi" src="http://184.154.202.243:8310/stream" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
 
-<table align="center" >
+<br/><br/><br/><br/><br/>
+<div style="display: flex; align-items: center;">
+<table>
   <tr>    
     <td style="text-align: right"><input id="radioOneButton" type="image" src="play.png" alt="Play" width="48" height="48" onclick="aud_play_pause('radioOne')"></td> 
 	<td style="text-align: left; color: white;">Telugu One</td>
@@ -56,6 +91,10 @@ body {
 	<td style="text-align: left; color: white;">Andhra Mirchi</td>
   </tr>
 </table>
-
+</div>
+</div>
+<div class="footer">
+  &copy; Sreekanth Mondeli
+</div>
 </body>
 </html>
